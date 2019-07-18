@@ -1,4 +1,4 @@
-package com.anil.sample.datastructure.datastructure;
+package com.anil.sample.datastructure.trees;
 
 import java.util.*;
 
