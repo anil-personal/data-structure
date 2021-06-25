@@ -2,10 +2,8 @@ package com.anil.sample.threads;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ThreadLocalExample
-{
-    public static void main(String[] args) throws InterruptedException
-    {
+public class ThreadLocalExample {
+    public static void main(String[] args) throws InterruptedException {
         AtomicInteger atomicValue = new AtomicInteger(10);
 
         Thread t1 = new Thread(new MyRunnable("1", atomicValue));
@@ -27,29 +25,23 @@ public class ThreadLocalExample
 
 }
 
-class MyRunnable implements Runnable
-{
+class MyRunnable implements Runnable {
     ThreadLocal<AtomicInteger> value;
 
     private String name;
 
-    public MyRunnable(String name, AtomicInteger value)
-    {
+    public MyRunnable(String name, AtomicInteger value) {
         this.name = name;
         this.value = ThreadLocal.withInitial(() -> value);
     }
 
     @Override
-    public void run()
-    {
+    public void run() {
         System.out.println("Before " + name + " value = " + value.get().get());
         value.set(new AtomicInteger(value.get().get() + 1));
-        try
-        {
+        try {
             Thread.sleep(3000);
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println("After " + name + " value = " + value.get().get());

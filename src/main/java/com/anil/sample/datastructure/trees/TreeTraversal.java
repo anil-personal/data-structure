@@ -52,11 +52,11 @@ public class TreeTraversal {
             }
             System.out.print(" " + currentNode.getValue() + " ");
             Node rightNode = currentNode.getRight();
-            if(rightNode != null){
+            if (rightNode != null) {
                 dfsNodes.push(rightNode);
             }
             Node leftNode = currentNode.getLeft();
-            if(leftNode != null){
+            if (leftNode != null) {
                 dfsNodes.push(leftNode);
             }
         }
@@ -74,20 +74,20 @@ public class TreeTraversal {
             if (currentNode == null) {
                 return;
             }
-            if(!travesedNodes.contains(currentNode)){
-                while(currentNode.getLeft() != null){
+            if (!travesedNodes.contains(currentNode)) {
+                while (currentNode.getLeft() != null) {
                     dfsNodes.push(currentNode);
                     currentNode = currentNode.getLeft();
                 }
             }
             System.out.print(" " + currentNode.getValue() + " ");
             travesedNodes.add(currentNode);
-            if(!dfsNodes.isEmpty()){
+            if (!dfsNodes.isEmpty()) {
                 currentNode = dfsNodes.pop();
                 System.out.print(" " + currentNode.getValue() + " ");
                 travesedNodes.add(currentNode);
                 Node rightNode = currentNode.getRight();
-                if(rightNode != null){
+                if (rightNode != null) {
                     dfsNodes.push(rightNode);
                 }
             }
@@ -106,21 +106,21 @@ public class TreeTraversal {
             if (currentNode == null) {
                 return;
             }
-            if(!travesedNodes.contains(currentNode)){
-                while(currentNode.getLeft() != null){
+            if (!travesedNodes.contains(currentNode)) {
+                while (currentNode.getLeft() != null) {
                     dfsNodes.push(currentNode);
                     currentNode = currentNode.getLeft();
                 }
             }
             System.out.print(" " + currentNode.getValue() + " ");
             travesedNodes.add(currentNode);
-            if(!dfsNodes.isEmpty()){
+            if (!dfsNodes.isEmpty()) {
                 currentNode = dfsNodes.pop();
                 Node rightNode = currentNode.getRight();
-                if(rightNode != null && !travesedNodes.contains(rightNode)){
+                if (rightNode != null && !travesedNodes.contains(rightNode)) {
                     dfsNodes.push(rightNode);
                     dfsNodes.push(currentNode);
-                }else{
+                } else {
                     System.out.print(" " + currentNode.getValue() + " ");
                 }
             }
@@ -131,9 +131,9 @@ public class TreeTraversal {
 
 
     /**
-     *         A
-     *     B      C
-     *   D   E  F   G
+     * A
+     * B      C
+     * D   E  F   G
      * H  I
      *
      * @param bft

@@ -3,10 +3,8 @@ package com.anil.sample.datastructure.sorting;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MergeSortExample
-{
-    public static void main(String[] args)
-    {
+public class MergeSortExample {
+    public static void main(String[] args) {
         List<Integer> unsorted = new ArrayList<>();
         unsorted.add(10);
         unsorted.add(7);
@@ -28,10 +26,8 @@ public class MergeSortExample
         System.out.println("sorted = " + sorted);
     }
 
-    private static List<Integer> getMergeSortedList(List<Integer> unsorted)
-    {
-        if (unsorted == null || unsorted.size() < 2)
-        {
+    private static List<Integer> getMergeSortedList(List<Integer> unsorted) {
+        if (unsorted == null || unsorted.size() < 2) {
             return unsorted;
         }
         int size = unsorted.size();
@@ -42,35 +38,23 @@ public class MergeSortExample
         int partOnePosition = 0;
         int partTwoPosition = 0;
         boolean allSorted = false;
-        while (!allSorted)
-        {
-            if (partOnePosition == partOneSorted.size() && partTwoPosition == partTwoSorted.size())
-            {
+        while (!allSorted) {
+            if (partOnePosition == partOneSorted.size() && partTwoPosition == partTwoSorted.size()) {
                 allSorted = true;
-            }
-            else if (partOnePosition < partOneSorted.size())
-            {
-                if (partTwoPosition < partTwoSorted.size())
-                {
-                    if (partOneSorted.get(partOnePosition) < partTwoSorted.get(partTwoPosition))
-                    {
+            } else if (partOnePosition < partOneSorted.size()) {
+                if (partTwoPosition < partTwoSorted.size()) {
+                    if (partOneSorted.get(partOnePosition) < partTwoSorted.get(partTwoPosition)) {
                         sortedList.add(partOneSorted.get(partOnePosition));
                         partOnePosition++;
-                    }
-                    else
-                    {
+                    } else {
                         sortedList.add(partTwoSorted.get(partTwoPosition));
                         partTwoPosition++;
                     }
-                }
-                else
-                {
+                } else {
                     sortedList.add(partOneSorted.get(partOnePosition));
                     partOnePosition++;
                 }
-            }
-            else
-            {
+            } else {
                 sortedList.add(partTwoSorted.get(partTwoPosition));
                 partTwoPosition++;
             }

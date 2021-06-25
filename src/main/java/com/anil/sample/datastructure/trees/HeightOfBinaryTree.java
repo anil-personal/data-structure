@@ -1,18 +1,14 @@
 package com.anil.sample.datastructure.trees;
 
-public class HeightOfBinaryTree
-{
-    public static void main(String[] args)
-    {
+public class HeightOfBinaryTree {
+    public static void main(String[] args) {
         HeightOfBinaryTree heightOfBinaryTree = new HeightOfBinaryTree();
         Tree tree = heightOfBinaryTree.createTree();
         System.out.println(heightOfBinaryTree.measureHeight(tree));
     }
 
-    public int measureHeight(Tree tree)
-    {
-        if (tree == null)
-        {
+    public int measureHeight(Tree tree) {
+        if (tree == null) {
             return -1;
         }
         int leftSideHeight = measureHeight(tree.left);
@@ -20,8 +16,7 @@ public class HeightOfBinaryTree
         return (leftSideHeight > rightSideHeight) ? (leftSideHeight + 1) : (rightSideHeight + 1);
     }
 
-    private Tree createTree()
-    {
+    private Tree createTree() {
         Tree root = new Tree(4);
 
         Tree two = new Tree(2);
@@ -46,44 +41,36 @@ public class HeightOfBinaryTree
         return root;
     }
 
-    private class Tree
-    {
+    private class Tree {
         private int value;
         private Tree left;
         private Tree right;
 
-        public Tree(int value)
-        {
+        public Tree(int value) {
             this.value = value;
         }
 
-        public int getValue()
-        {
+        public int getValue() {
             return value;
         }
 
-        public void setValue(int value)
-        {
+        public void setValue(int value) {
             this.value = value;
         }
 
-        public Tree getLeft()
-        {
+        public Tree getLeft() {
             return left;
         }
 
-        public void setLeft(Tree left)
-        {
+        public void setLeft(Tree left) {
             this.left = left;
         }
 
-        public Tree getRight()
-        {
+        public Tree getRight() {
             return right;
         }
 
-        public void setRight(Tree right)
-        {
+        public void setRight(Tree right) {
             this.right = right;
         }
     }
